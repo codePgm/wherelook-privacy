@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- 어디봄 개인정보 처리방침. 이 파일을 웹에 올리고 그 주소를 플레이 콘솔에 적는다. -->
+<title>어디봄 개인정보 처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+  /* 한 단 문서: 머리말(앱 이름·시행일) → 요약 → 조항. 앱과 같은 남색·금색 팔레트 */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --border: #D5D9E0;
+    --fg: #15181E;
+    --muted: #5B6270;
+    --accent: #A16207;
+    --accent-soft: #F3E8CF;
+    --font: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111318; --surface: #1B1E25; --border: #383D48; --fg: #F3F4F6;
+      --muted: #8B92A0; --accent: #F5B83D; --accent-soft: #2B2619; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111318; --surface: #1B1E25; --border: #383D48; --fg: #F3F4F6;
+    --muted: #8B92A0; --accent: #F5B83D; --accent-soft: #2B2619; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    padding-block: 40px 64px;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  main { max-width: 42rem; margin-inline: auto; display: grid; gap: 40px; }
+
+  header { display: grid; gap: 12px; }
+  .app { display: flex; align-items: center; gap: 10px; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .app svg { width: 22px; height: 28px; flex: none; }
+  h1 { margin: 0; font-size: clamp(28px, 6vw, 36px); line-height: 1.3; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+  .date {
+    justify-self: start; font-size: 13px; font-weight: 700; color: var(--accent);
+    border: 1.5px solid var(--accent); border-radius: 999px; padding: 2px 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  .lead { margin: 0; color: var(--muted); }
+
+  .summary {
+    background: var(--accent-soft); border-radius: 16px; padding: 20px 22px;
+    display: grid; gap: 8px;
+  }
+  .summary h2 { font-size: 15px; margin: 0; letter-spacing: 0.04em; color: var(--accent); }
+  .summary ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+  section { display: grid; gap: 12px; }
+  h2 { margin: 0; font-size: 20px; line-height: 1.4; font-weight: 800; text-wrap: balance; }
+  h2 .no { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 6px; }
+  h3 { margin: 8px 0 0; font-size: 16px; font-weight: 700; }
+  p { margin: 0; }
+  ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+  .note { color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  .table { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; }
+  th { width: 8.5em; color: var(--muted); font-weight: 500; }
+  tr + tr th, tr + tr td { border-top: 1px solid var(--border); }
+
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); padding-top: 20px; }
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="app">
+      <svg viewBox="0 0 22 28" aria-hidden="true">
+        <path d="M2 2.5Q2 1 3.5 1h15Q20 1 20 2.5V26L11 20 2 26Z" fill="var(--accent)"/>
+        <circle cx="11" cy="10.5" r="5.2" fill="var(--surface)"/>
+        <path d="M9.4 8.2 13.6 10.5 9.4 12.8Z" fill="var(--accent)"/>
+      </svg>
+      어디봄
+    </div>
+    <h1>개인정보 처리방침</h1>
+    <span class="date">시행일 2026년 10월 15일</span>
+    <p class="lead">일인개발자(이하 “개발자”)는 안드로이드 앱 “어디봄”(이하 “앱”)을 이용하는 분의 개인정보를 「개인정보 보호법」 등 관련 법령에 따라 처리합니다. 이 방침은 앱이 어떤 정보를 어디에 저장하고, 누구에게 전달되는지 설명합니다.</p>
+  </header>
+
+  <div class="summary">
+    <h2>한눈에 보기</h2>
+    <ul>
+      <li>회원가입이나 로그인이 없고, 개발자는 이용자의 개인정보를 수집하거나 서버에 저장하지 않습니다.</li>
+      <li>작품 기록, 메모, 썸네일, 설정은 이용자의 휴대폰 안에만 저장됩니다.</li>
+      <li>앱에 표시되는 광고(Google AdMob)를 위해 Google이 광고 ID 등 기기 정보를 수집합니다.</li>
+    </ul>
+  </div>
+
+  <section id="on-device">
+    <h2><span class="no">1.</span>휴대폰 안에만 저장하는 정보</h2>
+    <p>앱에 입력한 내용은 휴대폰의 앱 전용 저장 공간에만 저장되고 개발자에게 전송되지 않습니다. 개발자는 이 정보를 볼 수 없습니다.</p>
+    <div class="table">
+      <table>
+        <tr><th scope="row">작품 정보</th><td>제목, 분류, 장르, 시즌, 화수, 메모, 썸네일 이미지, 기록 날짜</td></tr>
+        <tr><th scope="row">화수 기록</th><td>화수를 바꾼 날짜와 바뀐 화수, 작품 제목과 분류 (통계용)</td></tr>
+        <tr><th scope="row">설정</th><td>테마, 목록 정렬 방식</td></tr>
+      </table>
+    </div>
+    <h3>보관과 삭제</h3>
+    <ul>
+      <li>작품 정보는 작품을 삭제하면 지워집니다. 화수 기록은 통계를 위해 작품을 삭제해도 남습니다.</li>
+      <li>앱을 삭제하거나 휴대폰 설정에서 앱 데이터를 삭제하면 모든 정보가 지워집니다.</li>
+      <li>휴대폰의 Google 백업을 켜 둔 경우, 안드로이드 자동 백업 기능이 앱 데이터를 이용자의 Google 계정에 백업할 수 있습니다. 이 백업은 Google이 관리하며 개발자는 접근할 수 없습니다. 휴대폰 설정에서 백업을 끌 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <section id="photos">
+    <h2><span class="no">2.</span>사진 선택</h2>
+    <p>작품 썸네일로 쓸 사진을 이용자가 직접 고르면, 안드로이드의 사진 선택 화면을 통해 고른 사진 한 장에만 접근합니다. 잘라 낸 이미지는 휴대폰 안에만 저장되며, 앱은 사진첩 전체에 접근하는 권한을 요청하지 않습니다.</p>
+  </section>
+
+  <section id="search">
+    <h2><span class="no">3.</span>썸네일 찾기 (이미지 검색)</h2>
+    <p>“썸네일 찾기”를 누르면 앱 안의 브라우저로 Google, 네이버, 다음 이미지 검색 페이지를 엽니다.</p>
+    <ul>
+      <li>검색어(분류와 작품 제목, 예: “웹툰 작품제목 썸네일”)가 이용자가 고른 검색 사이트로 전송됩니다.</li>
+      <li>검색 사이트는 각자의 개인정보처리방침에 따라 쿠키 등을 사용할 수 있으며, 쿠키는 휴대폰 안에 저장됩니다.</li>
+      <li>“캡처”는 보이는 화면을 이미지로 만들어 휴대폰 안에 저장할 뿐, 페이지 내용을 따로 수집하지 않습니다.</li>
+    </ul>
+    <p class="note">각 사이트의 개인정보처리방침: <a href="https://policies.google.com/privacy">Google</a> · <a href="https://policy.naver.com/policy/privacy.html">네이버</a> · <a href="https://www.kakao.com/policy/privacy">다음(카카오)</a></p>
+  </section>
+
+  <section id="ads">
+    <h2><span class="no">4.</span>광고 (Google AdMob)</h2>
+    <p>앱은 무료로 제공하기 위해 Google AdMob 광고를 보여 줍니다. 광고를 불러올 때 Google LLC가 아래 정보를 수집·처리할 수 있습니다. 개발자는 이 정보를 받지 않으며, AdMob에서 개인을 알아볼 수 없는 통계(광고 노출 수 등)만 확인합니다.</p>
+    <div class="table">
+      <table>
+        <tr><th scope="row">수집 항목</th><td>광고 ID, IP 주소, 기기 정보(기기 모델, 운영체제 버전, 언어 등), 광고 조회·클릭 기록, IP 주소로 추정한 대략적인 위치</td></tr>
+        <tr><th scope="row">목적</th><td>광고 제공, 광고 성과 측정, 부정 클릭 방지</td></tr>
+        <tr><th scope="row">보유 기간</th><td><a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>에 따름</td></tr>
+      </table>
+    </div>
+    <h3>국외 이전</h3>
+    <p>Google은 위 정보를 국외에 있는 서버에서 처리할 수 있습니다.</p>
+    <div class="table">
+      <table>
+        <tr><th scope="row">이전받는 자</th><td>Google LLC</td></tr>
+        <tr><th scope="row">이전 국가</th><td>미국 등 Google 데이터센터가 있는 국가</td></tr>
+        <tr><th scope="row">이전 시기와 방법</th><td>앱에서 광고를 불러올 때 인터넷을 통해 전송</td></tr>
+        <tr><th scope="row">이전 항목·목적</th><td>위 수집 항목, 위 목적과 같음</td></tr>
+        <tr><th scope="row">거부 방법</th><td>광고 ID는 아래 방법으로 삭제할 수 있습니다. 정보 전송을 원하지 않으면 앱을 삭제하면 됩니다.</td></tr>
+      </table>
+    </div>
+    <h3>맞춤 광고 끄기</h3>
+    <p>휴대폰의 <b>설정 › Google › 광고</b>에서 광고 ID를 삭제하거나 재설정할 수 있습니다. 휴대폰마다 메뉴 위치가 다를 수 있습니다. 광고 ID를 삭제해도 앱의 모든 기능을 쓸 수 있으며, 광고는 맞춤형이 아닌 광고로 계속 표시될 수 있습니다.</p>
+    <p class="note">Google이 광고에서 정보를 사용하는 방식: <a href="https://policies.google.com/technologies/ads">policies.google.com/technologies/ads</a></p>
+  </section>
+
+  <section id="updates">
+    <h2><span class="no">5.</span>앱 업데이트 확인</h2>
+    <p>앱을 켤 때 Google Play의 인앱 업데이트 기능으로 새 버전이 있는지 확인합니다. 이 확인은 휴대폰의 Google Play 스토어 앱이 처리하며 Google Play의 약관과 개인정보처리방침을 따릅니다. 개발자에게 전송되는 정보는 없습니다.</p>
+  </section>
+
+  <section id="third-party">
+    <h2><span class="no">6.</span>제3자 제공과 처리 위탁</h2>
+    <p>개발자가 보관하는 개인정보가 없으므로 제3자에게 제공하거나 처리를 위탁하는 개인정보도 없습니다. 광고와 업데이트 확인에 필요한 정보는 앱에 포함된 Google의 기능을 통해 Google이 직접 처리합니다(4, 5 참고). 앱은 쿠키를 직접 사용하지 않습니다.</p>
+  </section>
+
+  <section id="rights">
+    <h2><span class="no">7.</span>이용자의 권리</h2>
+    <ul>
+      <li>휴대폰 안의 정보는 앱에서 언제든지 고치거나 삭제할 수 있고, 앱을 삭제하면 모두 지워집니다.</li>
+      <li>개발자는 이용자의 개인정보를 보관하지 않아 열람·정정·삭제를 요청할 정보가 없습니다. Google이 처리하는 정보는 Google 계정 설정이나 Google에 요청할 수 있습니다.</li>
+      <li>그 밖에 궁금한 점은 아래 연락처로 문의해 주세요.</li>
+    </ul>
+  </section>
+
+  <section id="children">
+    <h2><span class="no">8.</span>아동의 개인정보</h2>
+    <p>앱은 만 14세 미만 아동을 주요 이용 대상으로 하지 않으며, 개발자는 아동의 개인정보를 수집하지 않습니다.</p>
+  </section>
+
+  <section id="security">
+    <h2><span class="no">9.</span>안전성 확보 조치</h2>
+    <ul>
+      <li>앱 데이터는 안드로이드의 앱 전용 저장 공간에 저장되어 다른 앱이 읽을 수 없습니다.</li>
+      <li>개발자는 이용자의 정보를 저장하는 서버를 운영하지 않습니다.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2><span class="no">10.</span>개인정보 보호책임자</h2>
+    <div class="table">
+      <table>
+        <tr><th scope="row">담당</th><td>일인개발자 (어디봄 개발자)</td></tr>
+        <tr><th scope="row">이메일</th><td><a href="mailto:gunmu0703@gmail.com">gunmu0703@gmail.com</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="remedy">
+    <h2><span class="no">11.</span>권익 침해 구제 방법</h2>
+    <p>개인정보 침해에 대한 상담이나 신고는 아래 기관에 할 수 있습니다.</p>
+    <div class="table">
+      <table>
+        <tr><th scope="row">개인정보침해신고센터</th><td><a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a> · 국번 없이 118</td></tr>
+        <tr><th scope="row">개인정보분쟁조정위원회</th><td><a href="https://www.kopico.go.kr">www.kopico.go.kr</a> · 1833-6972</td></tr>
+        <tr><th scope="row">대검찰청</th><td><a href="https://www.spo.go.kr">www.spo.go.kr</a> · 국번 없이 1301</td></tr>
+        <tr><th scope="row">경찰청</th><td><a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a> · 국번 없이 182</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="changes">
+    <h2><span class="no">12.</span>방침의 변경</h2>
+    <p>이 방침이 바뀌면 바뀐 내용과 시행일을 이 페이지에 알립니다.</p>
+  </section>
+
+  <footer>시행일: 2026년 10월 15일</footer>
+</main>
+</body>
+</html>
